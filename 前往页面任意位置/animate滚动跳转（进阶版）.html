@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>animate滚动跳转（进阶版）</title>
+  <style type="text/css">
+    div {
+      height: 500px;
+      border: 1px solid black;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" value="点击button跳转" onclick="click_scroll()" />
+  <div id="div1">div1</div>
+  <div id="div2">div2</div>
+  <div id="div3">div3</div>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+  <script type="text/javascript">
+    function click_scroll() {
+      var scroll_offset = $("#div3").offset().top;
+      $("body,html").animate({
+        // 让body的scrollTop等于div3的top，就实现了滚动
+        scrollTop:scroll_offset
+      },500);
+    }
+  </script>
+
+</body>
+</html>

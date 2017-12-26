@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>JS+锚点实现页面内跳转</title>
+  <style type="text/css">
+    div {
+      height: 500px;
+      border: 1px solid black;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" value="点击button跳转" onclick="click_scroll()" />
+  <div id="div1">div1</div>
+  <div id="div2">div2</div>
+  <div id="div3">div3</div>
+
+  <script type="text/javascript">
+    function click_scroll() {
+      // 得到div3这个div层的offset，包含两个值，top和left
+      var scroll_offset = document.getElementById("div3").offsetTop;
+      document.body.scrollTop = scroll_offset;
+    }
+  </script>
+
+</body>
+</html>
